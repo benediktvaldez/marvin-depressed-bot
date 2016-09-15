@@ -76,10 +76,6 @@ controller.hears(['attachment'], ['direct_message', 'direct_mention'], function 
   bot.reply(message, 'I\'ve calculated your chance of survival, but I don\'t think you\'ll like it')
 })
 
-controller.hears('.*', ['direct_message', 'direct_mention'], function (bot, message) {
-  bot.reply(message, 'Sorry <@' + message.user + '>, I don\'t understand. \n Did I say something wrong? Pardon me for breathing which I never do anyway so I don\'t know why I bother to say it oh God I\'m so depressed.')
-})
-
 controller.hears('do * laundry', ['direct_message', 'direct_mention'], function (bot, message) {
   bot.reply(message, 'Here I am, brain the size of a planet, and they tell me to do <@' + message.user + '>\'s laundry. Call that job satisfaction? Cause I don\'t.')
 })
@@ -90,4 +86,8 @@ controller.hears(['how have you been', 'how are you'], ['mention', 'direct_menti
 
 controller.hears(['what should I do about *', 'fix my problems', '*problem*'], ['mention', 'direct_mention', 'direct_message'], function (bot, message) {
   bot.reply(message, 'You think you\'ve got problems. What are you supposed to do if you are a manically depressed robot? No, don\'t even bother answering. I\'m 50,000 times more intelligent than you and even I don\'t know the answer. :disappointed:')
+})
+
+controller.hears('.*', ['direct_message', 'direct_mention'], function (bot, message) {
+  bot.reply(message, 'Sorry <@' + message.user + '>, I don\'t understand. \n Did I say something wrong? Pardon me for breathing which I never do anyway so I don\'t know why I bother to say it oh God I\'m so depressed.')
 })
