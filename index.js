@@ -27,7 +27,11 @@ if (token) {
 }
 
 controller.on('bot_channel_join', function (bot, message) {
-  bot.reply(message, "I'm here!")
+  bot.reply(message, "I'm here! I think you ought to know I'm feeling very depressed.. :disappointed:")
+})
+
+controller.on('channel_archive', function (bot, message) {
+  bot.reply(message, "I guess that channel")
 })
 
 controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
@@ -36,8 +40,8 @@ controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
 
 controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Hello.')
-  bot.reply(message, 'It\'s nice to talk to you directly.')
-  bot.reply(message, 'I think you ought to know I\'m feeling very depressed.')
+  bot.reply(message, "It's nice to talk to you directly.")
+  bot.reply(message, "I think you ought to know I'm feeling very depressed.. :disappointed:")
 })
 
 controller.hears('.*', ['mention'], function (bot, message) {
